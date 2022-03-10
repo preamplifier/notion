@@ -63,7 +63,7 @@
     var today = new Date();
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = `${dayOfWeek}, ${monthNames[today.getMonth()]} ${today.getDate()}+nth(today), ${today.getFullYear()}`;
+    var date = `${dayOfWeek}, ${monthNames[today.getMonth()]} ${today.getDate()+nth(today)}, ${today.getFullYear()}`;
 
     var greet;
 
