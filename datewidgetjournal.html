@@ -61,9 +61,10 @@
 
     
     var today = new Date();
+    var date = today.getDate();
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = `${dayOfWeek}, ${monthNames[today.getMonth()]} ${today.getDate()+nth(today.getDate())}, ${today.getFullYear()}`;
+    var dateString = `${dayOfWeek}, ${monthNames[today.getMonth()]} ${today.getDate()+nth(date)}, ${today.getFullYear()}`;
 
     var greet;
 
@@ -77,7 +78,7 @@
     document.getElementById('lbl').innerHTML = `
         <div class="container">
           <div class="greeting">${greet}</div>
-          <div id="date"> ${date}</div>
+          <div id="date"> ${dateString}</div>
 
         <div/>
     `;
