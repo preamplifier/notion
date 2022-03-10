@@ -36,6 +36,16 @@
 </body>
 
 <script>
+    const nth = function(d) {
+    if (d > 3 && d < 21) return 'th';
+    switch (d % 10) {
+        case 1:  return "st";
+        case 2:  return "nd";
+        case 3:  return "rd";
+        default: return "th";
+    }
+};
+
     var weekday = new Array(7);
     weekday[0] = "sunday";
     weekday[1] = "monday";
@@ -53,7 +63,7 @@
     var today = new Date();
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = `${dayOfWeek}, ${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
+    var date = `${dayOfWeek}, ${monthNames[today.getMonth()]} ${today.getDate()}+nth(today), ${today.getFullYear()}`;
 
     var greet;
 
